@@ -1,0 +1,39 @@
+doctype html
+html(lang="en-US" dir="ltr")
+  head
+    title Google Classroom
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="assets/css/teacher_home.css")
+  body
+    nav.navbar.navbar-light.bg-light
+      div.container-fluid
+        a.navbar-brand Google Classroom
+        p(style="font-size:30px") +
+    div.container
+      img(style="margin-left: 30%", src="/assets/img/gallery/pic1.png")
+    div.container(style="margin-top:50px")
+      button.create-btn.create(data-bs-toggle="modal", data-bs-target="#exampleModal") Create Class
+      button.create-btn Join Class
+    div.modal.fade(id="exampleModal", tabindex="-1", aria-labelledby="exampleModalLabel", aria-hidden="true")
+      div.modal-dialog
+        div.modal-content
+          div.modal-header
+            h5.modal-title#exampleModalLabel Modal title
+            button.btn-close(type="button", data-bs-dismiss="modal", aria-label="Close")
+          div.modal-body
+            form(action="/create_class" method="post")
+              div.mb-3
+                label.form-label(for="exampleFormControlInput1") Class Name
+                input.form-control(type="text", name = "name",id="exampleFormControlInput1")
+              div.mb-3
+                label.form-label(for="exampleFormControlTextarea1") Section
+                textarea.form-control(id="exampleFormControlTextarea1", name = "section",type="text")
+              div.mb-3
+                label.form-label(for="exampleFormControlTextarea2") Subject
+                textarea.form-control(id="exampleFormControlTextarea2", name = "subject", type="text")
+              div.mb-3
+                label.form-label(for="exampleFormControlTextarea3") Room
+                textarea.form-control(id="exampleFormControlTextarea3", name = "room", type="number")
+              button.btn.btn-primary(type="submit") Create
+
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js")

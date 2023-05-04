@@ -1,0 +1,24 @@
+doctype html
+head
+  title Google Classroom
+  link(href='assets/css/signup.css' rel='stylesheet')
+.container
+  .top-content
+    img(src='https://i.postimg.cc/CL7CmGSx/google-logo-png-29530.png' alt='')
+    h2 Sign in
+    p.heading Use your Google Account
+    h3=message1
+  form(action='/login' method='post')
+    .inputs
+      input#email.input(type='email' name='email')
+      label.input-label(for='email') Email
+    .inputs
+      input#password.input(type='password' name='password')
+      label.input-label(for='password') Password
+    p.color
+    a.link-btn(href='')
+    .btn-group
+      a.create-btn(href='/create') Create account
+      button.next-btn(type='submit') Sign in
+link(href='https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&display=swap' rel='stylesheet')
+script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js')
